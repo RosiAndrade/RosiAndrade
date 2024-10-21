@@ -1,0 +1,32 @@
+//Rosilaine Souza de Andrade
+//Desenvolvimento de Sistemas
+//TCTG241CNTDEV
+
+import java.util.Scanner;
+
+public class DescontoCompra {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicitar o valor da compra
+        System.out.print("Informe o valor da compra: R$ ");
+        double valorCompra = scanner.nextDouble();
+        
+        // Solicitar a porcentagem do desconto
+        System.out.print("Informe a porcentagem de desconto: ");
+        double percentualDesconto = scanner.nextDouble();
+        
+        // Calcular o valor do desconto
+        double valorDesconto = valorCompra * (percentualDesconto / 100);
+        
+        // Calcular o novo valor após o desconto
+        double novoValor = valorCompra - valorDesconto;
+        
+        // Exibir os resultados
+        System.out.printf("Valor cheio: R$ %.2f%n", valorCompra);
+        System.out.printf("Valor do desconto: R$ %.2f%n", valorDesconto);
+        System.out.printf("Novo valor: R$ %.2f%n", novoValor);
+        
+        scanner.close();
+    }
+}
