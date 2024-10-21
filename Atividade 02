@@ -1,0 +1,61 @@
+// Rosilaine Souza de Andrade
+// Desenvolvimento de Sistemas
+// TCTG241CNTDEV
+
+import java.util.Scanner;
+
+public class NumeroInfo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite um número: ");
+        double numero = scanner.nextDouble();
+        
+        // Verifica se é par ou ímpar
+        if (numero % 2 == 0) {
+            System.out.println("O número é par.");
+        } else {
+            System.out.println("O número é ímpar.");
+        }
+        
+        // Verifica se é positivo ou negativo
+        if (numero > 0) {
+            System.out.println("O número é positivo.");
+        } else if (numero < 0) {
+            System.out.println("O número é negativo.");
+        } else {
+            System.out.println("O número é zero.");
+        }
+        
+        // Verifica se é primo
+        if (isPrimo(numero)) {
+            System.out.println("O número é primo.");
+        } else {
+            System.out.println("O número não é primo.");
+        }
+        
+        // Raiz quadrada
+        if (numero >= 0) {
+            System.out.println("A raiz quadrada do número é: " + Math.sqrt(numero));
+        } else {
+            System.out.println("Não é possível calcular a raiz quadrada de um número negativo.");
+        }
+        
+        // Número elevado a três
+        System.out.println("O número elevado a três é: " + Math.pow(numero, 3));
+        
+        scanner.close();
+    }
+
+    public static boolean isPrimo(double numero) {
+        if (numero < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
